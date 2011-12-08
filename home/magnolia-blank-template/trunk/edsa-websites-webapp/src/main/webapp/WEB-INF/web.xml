@@ -18,43 +18,37 @@
 		<url-pattern>/*</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
 		<dispatcher>ERROR</dispatcher>
 	</filter-mapping>
 
 	<listener>
 		<listener-class>
-			info.magnolia.module.blossom.support.ServletContextExposingContextListener</listener-class>
+			info.magnolia.module.blossom.support.ServletContextExposingContextListener
+		</listener-class>
 	</listener>
 
 	<listener>
 		<listener-class>info.magnolia.cms.servlets.MgnlServletContextListener</listener-class>
 	</listener>
-	<context-param> 
-	   <param-name>magnolia.initialization.file</param-name>
-        <param-value>
+	<context-param>
+		<param-name>magnolia.initialization.file</param-name>
+		<param-value>
 	        /srv/conf/mgnl/config/${webapp}/magnolia.properties,
 	        WEB-INF/config/default/magnolia.properties,
 	        WEB-INF/config/magnolia.properties 
 	    </param-value>
-	   </context-param>
-	
-	<!--
-		These are the default paths searched for magnolia configuration.
-		Uncomment if you need to customize this.
-	-->
-	<!--
-		Be aware that your container might do its own variables replacement
-		here (Resin does, Tomcat doesn't, for instance
-	-->
-	<!--
-		<context-param> <param-name>magnolia.initialization.file</param-name>
-		<param-value>
-		WEB-INF/config/${servername}/${webapp}/magnolia.properties,
-		WEB-INF/config/${servername}/magnolia.properties,
-		WEB-INF/config/${webapp}/magnolia.properties,
-		WEB-INF/config/default/magnolia.properties,
-		WEB-INF/config/magnolia.properties </param-value> </context-param>
-	-->
+	</context-param>
+
+	<!-- These are the default paths searched for magnolia configuration. Uncomment 
+		if you need to customize this. -->
+	<!-- Be aware that your container might do its own variables replacement 
+		here (Resin does, Tomcat doesn't, for instance -->
+	<!-- <context-param> <param-name>magnolia.initialization.file</param-name> 
+		<param-value> WEB-INF/config/${servername}/${webapp}/magnolia.properties, 
+		WEB-INF/config/${servername}/magnolia.properties, WEB-INF/config/${webapp}/magnolia.properties, 
+		WEB-INF/config/default/magnolia.properties, WEB-INF/config/magnolia.properties 
+		</param-value> </context-param> -->
 	<jsp-config>
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>
