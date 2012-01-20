@@ -17,7 +17,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<magnoliaVersion>4.4.5</magnoliaVersion>
+		<magnoliaVersion>4.4.4</magnoliaVersion>
 		<spring.version>3.1.0.M2</spring.version>
 		<aspectj.version>1.6.9</aspectj.version>
 		<org.hibernate.version>3.6.0.Final</org.hibernate.version>
@@ -37,17 +37,6 @@
 			<version>4.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.5.11</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.5.11</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -190,6 +179,12 @@
 			</exclusions>
 		</dependency>
 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -295,20 +290,13 @@
 
 		<repository>
 			<id>magnolia-direct</id>
-			<name>Magnolia Releases Repository Direct</name>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</snapshots>
-			<url>http://nexus.magnolia-cms.com/content/repositories/magnolia.public.releases</url>
+			<name>Magnolia Releases Repository Direct</name>			
+			<url>http://nexus.magnolia-cms.com/content/repositories/public/</url>
 			<layout>default</layout>
-
+		</repository>
+		<repository>
+			<id>vaadin-addons</id>
+			<url>http://maven.vaadin.com/vaadin-addons</url>
 		</repository>
 
 
